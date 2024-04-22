@@ -1,0 +1,6 @@
+@API_for_managing_the_list_of_university_courses_HostAddress = http://localhost:5004
+
+GET {{API_for_managing_the_list_of_university_courses_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
