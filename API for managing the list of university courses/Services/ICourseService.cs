@@ -14,7 +14,7 @@ namespace API_for_managing_the_list_of_university_courses.Services
          
     } 
 
-    public class CourseService : ICourseService
+    public class CourseService: ICourseService
     {
         private readonly ApplicationDbContext _context; 
          private readonly DbSet<Course> _dbSet;  

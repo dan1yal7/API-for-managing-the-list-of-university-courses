@@ -13,7 +13,7 @@ namespace API_for_managing_the_list_of_university_courses.Services
         void Delete (Teacher teacher); 
     } 
 
-    public class TeacherService : ITeacherService
+    public class TeacherService: ITeacherService
     {
         private readonly ApplicationDbContext _context; 
         private readonly DbSet<Teacher> _dbSet; 
@@ -51,7 +51,7 @@ namespace API_for_managing_the_list_of_university_courses.Services
 
         public void Delete (Teacher teacher)
         {
-            _dbSet.Remove(teacher); 
+          _dbSet.Remove(teacher); 
         }
 
             
