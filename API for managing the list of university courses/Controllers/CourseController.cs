@@ -16,8 +16,8 @@ namespace API_for_managing_the_list_of_university_courses.Controllers
             _courseservice = courseservice;
         }
 
-        // GET: api/<CourseController> 
-        [HttpGet] 
+       
+        [HttpGet("GetAllcourses")] 
         public ActionResult GetAll()
         {
             var courses = _courseservice.GetAll(); 
@@ -33,7 +33,7 @@ namespace API_for_managing_the_list_of_university_courses.Controllers
         }
 
 
-        [HttpPost] 
+        [HttpPost("Creates/Add a new course")] 
 
         public ActionResult Create(Course course)
         {
@@ -48,6 +48,15 @@ namespace API_for_managing_the_list_of_university_courses.Controllers
            _courseservice.SaveChanges(); 
 
            return CreatedAtAction(nameof(GetById), new { id = course.CourseId }, course);
+        }
+
+        [HttpPut("Updates a new or existed course")]
+
+        public ActionResult Update(Course course)
+        {
+            _courseservice.Update(course);
+            _courseservice.SaveChanges ();
+            return Ok(course);
         }
     }
 }
